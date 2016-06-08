@@ -1,0 +1,27 @@
+{
+  "name": "ac-parking",
+  "description": "Avenue Code's parking",
+  "main": "index.js",
+  "authors": [
+    "agonzaga@avenuecode.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/andrehigher/parking",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^2.2.4",
+    "backbone": "^1.3.3",
+    "underscore": "^1.8.3",
+    "backbone.marionette": "marionette#^2.4.7",
+    "requirejs": "^2.2.0",
+    "Materialize": "materialize#^0.97.6",
+    "grunt-contrib-requirejs": "^1.0.0"
+  }
+}
