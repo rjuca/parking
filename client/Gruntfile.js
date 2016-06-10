@@ -3,6 +3,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
   grunt.loadNpmTasks( 'grunt-contrib-concat' );
+  grunt.loadNpmTasks( 'grunt-contrib-requirejs' );
 
   grunt.initConfig({
     pkg: grunt.file.readJSON( 'package.json' ),
@@ -19,9 +20,19 @@ module.exports = function( grunt ) {
       all: [ 'Gruntfile.js', 'app/**/*.js' ]
     },
     concat: {
-      js: {
+      config: {
         src: [
           'bower_components/requirejs/require.js',
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jquery/dist/underscore.js'
+          // 'bower_components/backbone/backbone.js',
+          // 'bower_components/backbone.marionette/lib/backbone.marionette.js'
+        ],
+        dest: '../server/public/js/config.js'
+      },
+      js: {
+        src: [
+          // 'bower_components/backbone/backbone.js',
           'app/**/*.js'
         ],
         dest: '../server/public/js/app.js'
@@ -34,5 +45,5 @@ module.exports = function( grunt ) {
   });
 
   // Default task(s).
-  grunt.registerTask( 'default', [ 'jshint', 'concat', 'uglify' ] );
+  grunt.registerTask( 'default', [ 'concat' ] );
 };
